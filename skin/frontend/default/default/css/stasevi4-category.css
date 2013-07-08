@@ -1,0 +1,22 @@
+
+#category_thumbnail .thumbnailTitle{
+	font-weight:bold;
+	margin-bottom:10px;
+}
+#category_thumbnail li{
+	width:22%;
+	float:left;
+	color:#652B18;
+	border-left: 1px dashed #b2b2b2;
+	padding:10px;
+	overflow:hidden; 
+}
+#category_thumbnail li ul li {
+	width:90%;
+	margin-top:5px;
+	font-size:11px;
+	text-align:left;
+	border-bottom:1px dotted #ccc;
+	border-left: none;
+	
+}

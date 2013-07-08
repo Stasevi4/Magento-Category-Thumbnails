@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Stasevi4_Category>
+			<version>0.1.0</version>
+		</Stasevi4_Category>
+	</modules>
+ 
+ <global>
+		<blocks>
+			<stasevi4_category>
+				<class>Stasevi4_Category_Block</class>
+			</stasevi4_category>
+		</blocks>		
+	</global>
+	<frontend>
+		<layout>
+			<updates>
+				<stasevi4_category>
+					<file>stasevi4-category.xml</file>
+				</stasevi4_category>
+			</updates>
+		</layout>
+	</frontend>
+</config>
