@@ -1,0 +1,45 @@
+<?php
+    $layer = Mage::getSingleton('catalog/layer');
+    $_category = $layer->getCurrentCategory();
+	$curentCategoryId = $_category->getId();
+	
+	echo '<h1>' . $_category->getName() . '</h1>';
+	$children = Mage::getModel('catalog/category')->load($curentCategoryId)->getChildrenCategories();
+
+	if(count($children)>0){
+
+		echo '<ul id="category_thumbnail">';
+		foreach($children  as $category){
+		
+			$cat =  Mage::getModel('catalog/category')->load($category->getId());
+			
+			if(!$imageUrl = $cat->getThumbnail()){continue;}
+
+			echo '<li>';
+			$imageUrl = Mage::getBaseUrl('media').'catalog/category/'. $imageUrl;
+			
+			echo '<div class="thumbnailTitle"><a href="'. $cat->getUrlPath() .'" >' . $category->getName() . '</a></div>';
+			echo '<a href="'. $cat->getUrlPath() .'"><img src="'. $imageUrl .'"  height="150px" width="150px" alt="' . $category->getName() . '" title="' . trim($category->getName()) . '"/></a>';			
+	
+         	echo $this->getChildrenHtml($category->getId());	
+	
+			echo '</li>';
+		}
+		echo '</ul>';
+	}
+?>
+ <script type="text/javascript">
+ jQuery("#category_thumbnail").css('min-height', function (){
+                        
+             jQuery(this).each(function(){              
+                var currentTallest = 0;                            
+                jQuery(this).children().each(function(i){
+                    if (jQuery(this).height() > currentTallest) { currentTallest = jQuery(this).height();}
+                });
+                if (jQuery.browser.msie && jQuery.browser.version == 6.0) { jQuery(this).children().css({'height': currentTallest}); }
+                jQuery(this).children().css({'min-height': currentTallest}); 
+            });
+            return this;                            
+              }
+         );
+ </script>
