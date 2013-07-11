@@ -3,11 +3,11 @@
     $_category = $layer->getCurrentCategory();
 	$curentCategoryId = $_category->getId();
 	
-	echo '<h1>' . $_category->getName() . '</h1>';
+	
 	$children = Mage::getModel('catalog/category')->load($curentCategoryId)->getChildrenCategories();
 
 	if(count($children)>0){
-
+		echo '<h1>' . $_category->getName() . '</h1>';
 		echo '<ul id="category_thumbnail">';
 		foreach($children  as $category){
 		
