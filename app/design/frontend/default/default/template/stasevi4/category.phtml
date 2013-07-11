@@ -17,10 +17,9 @@
 
 			echo '<li>';
 			$imageUrl = Mage::getBaseUrl('media').'catalog/category/'. $imageUrl;
-			
-			echo '<div class="thumbnailTitle"><a href="'. $cat->getUrlPath() .'" >' . $category->getName() . '</a></div>';
-			echo '<a href="'. $cat->getUrlPath() .'"><img src="'. $imageUrl .'"  height="150px" width="150px" alt="' . $category->getName() . '" title="' . trim($category->getName()) . '"/></a>';			
 	
+			echo '<a href="'. $cat->getUrlPath() .'"><img src="'. $imageUrl .'"  height="150px" width="150px" alt="' . $category->getName() . '" title="' . trim($category->getName()) . '"/></a>';			
+			echo '<div class="thumbnailTitle"><a href="'. $cat->getUrlPath() .'" >' . $category->getName() . '</a></div>';
          	echo $this->getChildrenHtml($category->getId());	
 	
 			echo '</li>';
