@@ -2,6 +2,7 @@
 #category_thumbnail .thumbnailTitle{
 	font-weight:bold;
 	margin-bottom:10px;
+	text-align:center;
 }
 #category_thumbnail li{
 	width:22%;
